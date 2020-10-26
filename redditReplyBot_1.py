@@ -24,7 +24,7 @@ already_exist = True
 for submission in subreddit.new(limit = 5):
     ## THIS PART IS KNOWN TO GET BUGGY SO IF YOU DON'T WANT TO CHECK
     ## POST TITLE'S JUST COMMENT OUT FROM HERE
-    for naslov in submission.title:
+    for post_title in submission.title:
         while (already_exist != False):
             #Edit your own trigger TITLE word 
             if "your trigger word" in submission.title:
