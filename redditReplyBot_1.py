@@ -19,7 +19,8 @@ reply_phrase = "Your reply phrase"
 #This will end your while loop
 already_exist = True
 
-
+#Change this limit to whichever you like, also you can change to check
+##subreddit.hot, subreddit.new, subreddit.top
 for submission in subreddit.new(limit = 5):
     ## THIS PART IS KNOWN TO GET BUGGY SO IF YOU DON'T WANT TO CHECK
     ## POST TITLE'S JUST COMMENT OUT FROM HERE
@@ -37,6 +38,9 @@ for submission in subreddit.new(limit = 5):
                 print("Already commented on it or post with trigger words doesn't exist.")
                 already_exist = False
     ## TO HERE ^^
+    
+    ##This part works normally and it checks if there are your target words
+    ##inside of post comments.
     for comment in submission.comments:
         if hasattr(comment, "body"):
             comment_lower = comment.body.lower()
