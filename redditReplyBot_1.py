@@ -45,12 +45,10 @@ for submission in subreddit.new(limit = 5):
         if hasattr(comment, "body"):
             comment_lower = comment.body.lower()
             if (reply_phrase in comment.body):
-
                 print("Reply phrase already found, skipping this comment.")
-
+                
             #Edit your trigger comment word here.
             elif("your trigger comment word" in comment.body):
-
                 comment.reply(reply_phrase)
                 print("Trigger word was found in this comment : {0}".format(comment_lower))
                 print("---------------")
